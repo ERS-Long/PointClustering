@@ -1,0 +1,24 @@
+    .blurInfo {
+      position: relative;
+      top: 10px;
+      right: 5px;
+      font-size: 1.25em;
+      font-family: monospace;
+      color: #4C4C4C;
+      width: 240px;
+      background-color: #FFFFFF;
+      padding: 10px;
+      border: 2px solid #57585A;
+      border-radius: 20px;
+    }
+
+    .blurInfo p span {
+      background-color: #FFFFFF;
+      padding: 0 5px;
+      border-radius: 5px;
+    }
+
+    .blurInfo input[type=range] {
+      width: 100%;
+      display: block;
+    }
