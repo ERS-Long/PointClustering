@@ -2,7 +2,7 @@
 
 User Widget for CMV - The Configurable Map Viewer (version 1.3.4)
 
-Require CMV (1.3.4) where sublayer menu control is implemented.
+Requires CMV (1.3.4) where sublayer menu control is implemented.
 
 https://github.com/odoe/esri-clusterfeaturelayer
 
