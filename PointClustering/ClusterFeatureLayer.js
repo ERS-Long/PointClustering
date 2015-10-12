@@ -175,7 +175,8 @@ define([
       this._singleRenderer = options.singleRenderer;
 
       this._objectIdField = options.objectIdField || 'OBJECTID';
-
+      this._opacity = options.hasOwnProperty('opacity') ? options.opacity : 1;
+      
       if (!this.url) {
         throw new Error('url is a required parameter');
       }
@@ -283,9 +284,10 @@ define([
 
                 renderer.addBreak(2, 10, small);
                 renderer.addBreak(10, 25, medium);
-                renderer.addBreak(25, Infinity, large);
+                renderer.addBreak(25, 10000, large);
                 this.setRenderer(renderer);
               }
+              this.setOpacity(this._opacity);
               this._reCluster();
             }));
           }
@@ -638,7 +640,7 @@ define([
       }
 
       // show number of points in the cluster
-      var label = new TextSymbol(c.attributes.clusterCount)
+      var label = new TextSymbol(c.attributes.clusterCount.toString())
         .setColor(new Color(this._clusterLabelColor))
         .setOffset(0, this._clusterLabelOffset)
         .setFont(this._font);
@@ -687,7 +689,7 @@ define([
       if ( label.length == 1 ) {
         // console.log('update label...found: ', label);
         this.remove(label[0]);
-        var newLabel = new TextSymbol(c.attributes.clusterCount)
+        var newLabel = new TextSymbol(c.attributes.clusterCount.toString())
           .setColor(new Color(this._clusterLabelColor))
           .setOffset(0, this._clusterLabelOffset)
           .setFont(this._font);
